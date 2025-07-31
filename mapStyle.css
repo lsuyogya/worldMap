@@ -1,0 +1,25 @@
+:root {
+  --primaryMapColor: #7bccc39a;
+  --headMapColor: #00675f;
+  --regionalMapColor: #7bccc3;
+  --secondaryMapColor: #919d9c;
+  --strokeMapColor: #bcbdbf;
+}
+
+.svgMap-map-wrapper {
+  background: transparent;
+}
+
+.svgMap-map-wrapper .svgMap-country {
+  fill: var(--secondaryMapColor);
+  stroke: var(--strokeMapColor);
+  &.hasData {
+    fill: var(--primaryMapColor);
+  }
+  &.regional {
+    fill: var(--regionalMapColor);
+  }
+  &.head {
+    fill: var(--headMapColor);
+  }
+}
