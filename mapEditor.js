@@ -116,25 +116,69 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// document.addEventListener('DOMContentLoaded', () => {
+//   const svgMap = document.getElementById('svgMap');
+//   const paths = svgMap.querySelectorAll('path');
+
+//   paths.forEach((path) => {
+//     if (mapCountries[path.dataset.id] === undefined) {
+//       path.remove();
+//       return;
+//     }
+//     if (values[path.dataset.id] !== undefined) {
+//       path.classList.add('hasData');
+//     }
+//     if (values[path.dataset.id]?.pr === 'Regional Branch') {
+//       path.classList.add('regional');
+//       return;
+//     }
+//     if (values[path.dataset.id]?.pr === 'Head Branch') {
+//       path.classList.add('head');
+//       return;
+//     }
+//   });
+// });
+
 document.addEventListener('DOMContentLoaded', () => {
   const svgMap = document.getElementById('svgMap');
   const paths = svgMap.querySelectorAll('path');
 
   paths.forEach((path) => {
-    if (mapCountries[path.dataset.id] === undefined) {
+    const countryCode = path.dataset.id;
+
+    // Skip unknown countries
+    if (mapCountries[countryCode] === undefined) {
       path.remove();
       return;
     }
-    if (values[path.dataset.id] !== undefined) {
+
+    // Add classes based on presence type
+    const presence = values[countryCode]?.pr;
+    if (presence) {
       path.classList.add('hasData');
-    }
-    if (values[path.dataset.id]?.pr === 'Regional Branch') {
-      path.classList.add('regional');
-      return;
-    }
-    if (values[path.dataset.id]?.pr === 'Head Branch') {
-      path.classList.add('head');
-      return;
+      if (presence === 'Regional Branch') path.classList.add('regional');
+      if (presence === 'Head Branch') path.classList.add('head');
+
+      // --- Add text label for countries with values ---
+
+      // Calculate bounding box
+      const bbox = path.getBBox();
+
+      // Create a <text> element
+      const text = document.createElementNS(
+        'http://www.w3.org/2000/svg',
+        'text'
+      );
+      text.setAttribute('x', bbox.x + bbox.width / 2);
+      text.setAttribute('y', bbox.y + bbox.height / 2);
+      text.setAttribute('text-anchor', 'middle');
+      text.setAttribute('dominant-baseline', 'middle');
+      text.setAttribute('font-size', '12'); // adjust as needed
+      text.setAttribute('fill', '#000'); // color of text
+      text.textContent = mapCountries[countryCode];
+
+      // Append text to the same parent SVG
+      svgMap.querySelector('g').appendChild(text);
     }
   });
 });
