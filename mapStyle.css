@@ -69,7 +69,9 @@ body {
   border-radius: 5px;
   font-size: 14px;
   opacity: 0;
-  transition: opacity 0.2s, transform 0.2s;
+  display: none;
+  transition: opacity 0.2s, transform 0.2s, display 0.2s;
+  transition-behavior: allow-discrete;
   z-index: 1000;
   min-width: 150px;
   /* box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2); */
@@ -114,4 +116,5 @@ body {
 
 .tooltip.visible {
   opacity: 1;
+  display: block;
 }
