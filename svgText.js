@@ -71,27 +71,173 @@ const mapCountries = {
 };
 
 const values = {
-  AE: { pr: "Head Branch", list: ["item 1", "item 2", "item 3"] }, // United Arab Emirates
-  QA: { pr: "Services", list: ["item 1", "item 2", "item 3"] }, //Quatar
-  MA: { pr: "Regional Branch", list: ["item 1", "item 2", "item 3"] }, // Morocco
-  ML: { pr: "Services", list: ["item 1", "item 2", "item 3"] }, // Mali
-  GN: { pr: "Services", list: ["item 1", "item 2", "item 3"] }, // Guinea
-  CI: { pr: "Regional Branch", list: ["item 1", "item 2", "item 3"] }, // Côte d'Ivoire
-  GH: { pr: "Services", list: ["item 1", "item 2", "item 3"] }, // Ghana
-  TG: { pr: "Services", list: ["item 1", "item 2", "item 3"] }, // Togo
-  BJ: { pr: "Services", list: ["item 1", "item 2", "item 3"] }, // Benin
-  NG: { pr: "Services", list: ["item 1", "item 2", "item 3"] }, // Nigeria
-  CM: { pr: "Services", list: ["item 1", "item 2", "item 3"] }, // Cameroon
-  ET: { pr: "Services", list: ["item 1", "item 2", "item 3"] }, // Ethiopia
-  SO: { pr: "Services", list: ["item 1", "item 2", "item 3"] }, // Somalia
-  KE: { pr: "Regional Branch", list: ["item 1", "item 2", "item 3"] }, // Kenya
-  UG: { pr: "Services", list: ["item 1", "item 2", "item 3"] }, // Uganda
-  CD: { pr: "Services", list: ["item 1", "item 2", "item 3"] }, // Democratic Republic of Congo
-  TZ: { pr: "Services", list: ["item 1", "item 2", "item 3"] }, // Tanzania
-  MZ: { pr: "Services", list: ["item 1", "item 2", "item 3"] }, // Mozambique
-  ZW: { pr: "Services", list: ["item 1", "item 2", "item 3"] }, // Zimbabwe
-  ZA: { pr: "Regional Branch", list: ["item 1", "item 2", "item 3"] }, // South Africa
-  SA: { pr: "Regional Branch", list: ["item 1", "item 2", "item 3"] }, // Kingdom of Saudi Arabia
+  AE: {
+    pr: "Head Branch",
+    destination: [
+      { name: "item 1", link: "#" },
+      { name: "item 2", link: "#" },
+      { name: "item 3", link: "#" },
+    ],
+  },
+  QA: {
+    pr: "Services",
+    destination: [
+      { name: "item 1", link: "#" },
+      { name: "item 2", link: "#" },
+      { name: "item 3", link: "#" },
+    ],
+  },
+  MA: {
+    pr: "Regional Branch",
+    destination: [
+      { name: "item 1", link: "#" },
+      { name: "item 2", link: "#" },
+      { name: "item 3", link: "#" },
+    ],
+  },
+  ML: {
+    pr: "Services",
+    destination: [
+      { name: "item 1", link: "#" },
+      { name: "item 2", link: "#" },
+      { name: "item 3", link: "#" },
+    ],
+  },
+  GN: {
+    pr: "Services",
+    destination: [
+      { name: "item 1", link: "#" },
+      { name: "item 2", link: "#" },
+      { name: "item 3", link: "#" },
+    ],
+  },
+  CI: {
+    pr: "Regional Branch",
+    destination: [
+      { name: "item 2", link: "#" },
+      { name: "item 3", link: "#" },
+    ],
+  },
+  GH: {
+    pr: "Services",
+    destination: [
+      { name: "item 1", link: "#" },
+      { name: "item 2", link: "#" },
+      { name: "item 3", link: "#" },
+    ],
+  },
+  TG: {
+    pr: "Services",
+    destination: [
+      { name: "item 1", link: "#" },
+      { name: "item 2", link: "#" },
+      { name: "item 3", link: "#" },
+    ],
+  },
+  BJ: {
+    pr: "Services",
+    destination: [
+      { name: "item 1", link: "#" },
+      { name: "item 2", link: "#" },
+      { name: "item 3", link: "#" },
+    ],
+  },
+  NG: {
+    pr: "Services",
+    destination: [
+      { name: "item 1", link: "#" },
+      { name: "item 2", link: "#" },
+      { name: "item 3", link: "#" },
+    ],
+  },
+  CM: {
+    pr: "Services",
+    destination: [
+      { name: "item 1", link: "#" },
+      { name: "item 2", link: "#" },
+      { name: "item 3", link: "#" },
+    ],
+  },
+  ET: {
+    pr: "Services",
+    destination: [
+      { name: "item 1", link: "#" },
+      { name: "item 2", link: "#" },
+      { name: "item 3", link: "#" },
+    ],
+  },
+  SO: {
+    pr: "Services",
+    destination: [
+      { name: "item 1", link: "#" },
+      { name: "item 2", link: "#" },
+      { name: "item 3", link: "#" },
+    ],
+  },
+  KE: {
+    pr: "Regional Branch",
+    destination: [
+      { name: "item 1", link: "#" },
+      { name: "item 2", link: "#" },
+      { name: "item 3", link: "#" },
+    ],
+  },
+  UG: {
+    pr: "Services",
+    destination: [
+      { name: "item 1", link: "#" },
+      { name: "item 2", link: "#" },
+      { name: "item 3", link: "#" },
+    ],
+  },
+  CD: {
+    pr: "Services",
+    destination: [
+      { name: "item 1", link: "#" },
+      { name: "item 2", link: "#" },
+      { name: "item 3", link: "#" },
+    ],
+  },
+  TZ: {
+    pr: "Services",
+    destination: [
+      { name: "item 1", link: "#" },
+      { name: "item 2", link: "#" },
+      { name: "item 3", link: "#" },
+    ],
+  },
+  MZ: {
+    pr: "Services",
+    destination: [
+      { name: "item 1", link: "#" },
+      { name: "item 2", link: "#" },
+      { name: "item 3", link: "#" },
+    ],
+  },
+  ZW: {
+    pr: "Services",
+    destination: [
+      { name: "item 1", link: "#" },
+      { name: "item 2", link: "#" },
+      { name: "item 3", link: "#" },
+    ],
+  },
+  ZA: {
+    pr: "Regional Branch",
+    destination: [
+      { name: "item 1", link: "#" },
+      { name: "item 2", link: "#" },
+      { name: "item 3", link: "#" },
+    ],
+  },
+  SA: {
+    pr: "Regional Branch",
+    destination: [
+      { name: "item 1", link: "#" },
+      { name: "item 2", link: "#" },
+      { name: "item 3", link: "#" },
+    ],
+  },
 };
 
 const styles = {
@@ -328,17 +474,23 @@ document.addEventListener("DOMContentLoaded", () => {
         tooltipCountryName.textContent = countryName;
         tooltipDataList.innerHTML = "";
 
-        if (countryData.list && Array.isArray(countryData.list)) {
-          countryData.list.forEach((detail) => {
+        if (countryData.destination && Array.isArray(countryData.destination)) {
+          countryData.destination.forEach((detail) => {
             const detailLi = document.createElement("li");
             const svgElement = document.createElementNS(svgNS, "svg");
             svgElement.setAttribute("width", "12");
             svgElement.setAttribute("height", "12");
             svgElement.innerHTML = `<use href="#myCustomSymbol"></use>`;
             const detailLiText = document.createElement("span");
-            detailLiText.textContent = detail;
+            detailLiText.textContent = detail.name || "No Name";
+            const detailLiLink = document.createElement("a");
+            detailLiLink.setAttribute("href", detail?.link || "#");
+            detailLiLink.setAttribute("target", "_blank");
+            detailLiLink.appendChild(detailLiText);
+
+            detailLiText.textContent = detail?.name || "No Name";
             detailLi.appendChild(svgElement);
-            detailLi.appendChild(detailLiText);
+            detailLi.appendChild(detailLiLink);
             tooltipDataList.appendChild(detailLi);
           });
         }
