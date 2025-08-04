@@ -331,7 +331,14 @@ document.addEventListener("DOMContentLoaded", () => {
         if (countryData.list && Array.isArray(countryData.list)) {
           countryData.list.forEach((detail) => {
             const detailLi = document.createElement("li");
-            detailLi.textContent = detail;
+            const svgElement = document.createElementNS(svgNS, "svg");
+            svgElement.setAttribute("width", "12");
+            svgElement.setAttribute("height", "12");
+            svgElement.innerHTML = `<use href="#myCustomSymbol"></use>`;
+            const detailLiText = document.createElement("span");
+            detailLiText.textContent = detail;
+            detailLi.appendChild(svgElement);
+            detailLi.appendChild(detailLiText);
             tooltipDataList.appendChild(detailLi);
           });
         }
@@ -453,7 +460,7 @@ function createRegionalLocator({ countryCode }) {
 
   const gArtboard1 = document.createElementNS(svgNS, "g");
   gArtboard1.setAttribute("id", `${countryCode}_Artboard1`);
-  gArtboard1.setAttribute("clip-path", "url(#cp1)"); // Ensure cp1 is defined in your SVG
+  gArtboard1.setAttribute("clip-path", "url(#cp1)");
 
   const gLayer1 = document.createElementNS(svgNS, "g");
   gLayer1.setAttribute("id", `${countryCode}_Layer1`);
@@ -463,7 +470,7 @@ function createRegionalLocator({ countryCode }) {
 
   const path1 = document.createElementNS(svgNS, "path");
   path1.setAttribute("id", `${countryCode}_regionalPath1`);
-  path1.setAttribute("class", "s0"); // Assuming 's0' class is defined in your CSS
+  path1.setAttribute("class", "s0");
   path1.setAttribute(
     "d",
     "m16.7 2.2l14.3 30.7h-4.8l-12.4-25.5-11.9 25.5h-0.1l12.2-26.2 2.1-4.5h0.6z"
@@ -473,7 +480,7 @@ function createRegionalLocator({ countryCode }) {
   const path2 = document.createElementNS(svgNS, "path");
   path2.setAttribute("id", `${countryCode}_regionalPath2`);
   path2.setAttribute("fill-rule", "evenodd");
-  path2.setAttribute("class", "s1"); // Assuming 's1' class is defined in your CSS
+  path2.setAttribute("class", "s1");
   path2.setAttribute(
     "d",
     "m31.6 33.3h-5.6l-12.2-25-11.6 25h-1l12.4-26.7 2.3-4.8h1.1zm-5.2-0.8h4l-14-29.9h-0.1l-2.2 4.7z"
